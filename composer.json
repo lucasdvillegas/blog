@@ -8,6 +8,12 @@
         "framework"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-crud-generator"
+        }
+    ],
     "require": {
         "php": "^8.3",
         "inertiajs/inertia-laravel": "^3.0",
@@ -15,7 +21,8 @@
         "laravel/fortify": "^1.37.2",
         "laravel/framework": "^13.7",
         "laravel/tinker": "^3.0",
-        "laravel/wayfinder": "^0.1.14"
+        "laravel/wayfinder": "^0.1.14",
+        "lucasdvillegas/laravel-crud-generator": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",
@@ -111,6 +118,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
