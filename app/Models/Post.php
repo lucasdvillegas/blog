@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @use HasFactory<\Database\Factories\PostFactory>
+ * @template TFactory of \Database\Factories\PostFactory
+ * @use HasFactory<TFactory>
  */
 class Post extends Model
 {
