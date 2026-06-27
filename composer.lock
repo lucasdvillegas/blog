@@ -2508,12 +2508,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucasdvillegas/laravel-crud-generator.git",
-                "reference": "fdedd741a98cb36e976ee020a9b6946791dd544c"
+                "reference": "650bf5d93d2e5915c906111e18f6a0e86c09d681"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucasdvillegas/laravel-crud-generator/zipball/fdedd741a98cb36e976ee020a9b6946791dd544c",
-                "reference": "fdedd741a98cb36e976ee020a9b6946791dd544c",
+                "url": "https://api.github.com/repos/lucasdvillegas/laravel-crud-generator/zipball/650bf5d93d2e5915c906111e18f6a0e86c09d681",
+                "reference": "650bf5d93d2e5915c906111e18f6a0e86c09d681",
                 "shasum": ""
             },
             "require": {
@@ -2549,7 +2549,7 @@
                 "source": "https://github.com/lucasdvillegas/laravel-crud-generator/tree/main",
                 "issues": "https://github.com/lucasdvillegas/laravel-crud-generator/issues"
             },
-            "time": "2026-06-27T04:09:21+00:00"
+            "time": "2026-06-27T04:16:15+00:00"
         },
         {
             "name": "monolog/monolog",
