@@ -10,8 +10,8 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "path",
-            "url": "../laravel-crud-generator"
+            "type": "vcs",
+            "url": "https://github.com/lucasdvillegas/laravel-crud-generator"
         }
     ],
     "require": {

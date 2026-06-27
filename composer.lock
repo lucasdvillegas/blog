@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57481830aaafbe5827b5fee0c3c0c78d",
+    "content-hash": "5a51041d01e21e3811b5fc254fb89d55",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2505,15 +2505,22 @@
         {
             "name": "lucasdvillegas/laravel-crud-generator",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lucasdvillegas/laravel-crud-generator.git",
+                "reference": "f750b78332ebebc2c68c1eaf3bc0930693017063"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-crud-generator",
-                "reference": "f8f01432023148056b17e979e4da192f520470f7"
+                "type": "zip",
+                "url": "https://api.github.com/repos/lucasdvillegas/laravel-crud-generator/zipball/f750b78332ebebc2c68c1eaf3bc0930693017063",
+                "reference": "f750b78332ebebc2c68c1eaf3bc0930693017063",
+                "shasum": ""
             },
             "require": {
-                "illuminate/support": "^13.0",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
                 "php": "^8.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2538,9 +2545,11 @@
                 }
             ],
             "description": "Laravel CRUD generator for Inertia Vue and shadcn applications",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/lucasdvillegas/laravel-crud-generator/tree/main",
+                "issues": "https://github.com/lucasdvillegas/laravel-crud-generator/issues"
+            },
+            "time": "2026-06-27T03:31:48+00:00"
         },
         {
             "name": "monolog/monolog",
