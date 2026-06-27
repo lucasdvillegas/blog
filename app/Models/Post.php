@@ -2,17 +2,13 @@
 
 namespace App\Models;
 
+use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @template TFactory of \Database\Factories\PostFactory
- * @use HasFactory<TFactory>
- *
- * @mixin \Eloquent
- */
 class Post extends Model
 {
+     /** @use HasFactory<PostFactory> */
     use HasFactory;
 
     protected $fillable = [
