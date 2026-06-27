@@ -3,12 +3,6 @@ import { Trash2 } from '@lucide/vue';
 import { ref } from 'vue';
 
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
-import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -19,10 +13,16 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 
 const props = defineProps<{
-  id: number | string;
+  id: number;
   title?: string;
   description?: string;
 }>();
@@ -46,7 +46,7 @@ function confirm() {
       <Tooltip>
         <TooltipTrigger as-child>
           <AlertDialogTrigger as-child>
-            <button class="text-red-500 transition hover:text-red-700">
+            <button class="text-red-500 transition hover:text-red-700 cursor-pointer">
               <Trash2 class="h-5 w-5" />
             </button>
           </AlertDialogTrigger>

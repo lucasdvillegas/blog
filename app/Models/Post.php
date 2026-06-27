@@ -18,4 +18,8 @@ class Post extends Model
         'active',
         'slug'
     ];
+
+    protected $casts = [
+        'active' => 'boolean',
+    ];
 }

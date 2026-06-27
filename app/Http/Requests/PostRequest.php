@@ -16,20 +16,33 @@ class PostRequest extends FormRequest
     {
         return [
             'title' => [
-                'required'
-            ],
-            'description' => [
-                'required'
-            ],
-            'content' => [
-                'required'
-            ],
-            'active' => [
-                'required'
+                'required',
+                'string',
+                'min:3',
+                'max:255',
             ],
             'slug' => [
-                'required'
-            ]
+                'required',
+                'string',
+                'min:3',
+                'max:255',
+            ],
+            'description' => [
+                'required',
+                'string',
+                'min:10',
+                'max:500',
+            ],
+            'content' => [
+                'required',
+                'string',
+                'min:20',
+                'max:10000',
+            ],
+            'active' => [
+                'required',
+                'boolean',
+            ],
         ];
     }
 }

@@ -1,16 +1,6 @@
 <script setup lang="ts">
 import { Head, Link, router } from '@inertiajs/vue3';
-
 import { Pencil, Plus } from '@lucide/vue';
-
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from '@/components/ui/tooltip';
-import postsRoutes from '@/routes/posts';
-import type { Post } from '@/types';
 import DeleteActionButton from '@/components/DeleteActionButton.vue';
 import {
     Table,
@@ -21,9 +11,15 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from '@/components/ui/tooltip';
+import postsRoutes from '@/routes/posts';
+import type { Post } from '@/types';
 
-
-// Definir el layout y breadcrumbs al estilo del dashboard
 defineOptions({
     layout: {
         breadcrumbs: [
@@ -35,11 +31,9 @@ defineOptions({
     },
 });
 
-// Props que recibes del controlador
-const props = defineProps<{
+defineProps<{
     posts: {
         data: Post[];
-        // ... otros datos de paginación si los hay
     };
 }>();
 
@@ -49,7 +43,6 @@ const deletePost = (id: number) => {
 </script>
 
 <template>
-
     <Head title="Posts" />
 
     <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
@@ -96,7 +89,7 @@ const deletePost = (id: number) => {
                         </TableCell>
 
                         <TableCell>
-                            {{ post.created_at }}
+                            {{ new Date(post.created_at).toLocaleDateString('es-AR') }}
                         </TableCell>
 
                         <TableCell>
