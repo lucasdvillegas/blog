@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Database\Factories\PostFactory;
 
 /**
- * @use HasFactory<PostFactory>
+ * @use HasFactory<\Database\Factories\PostFactory>
  */
 class Post extends Model
 {
