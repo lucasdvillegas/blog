@@ -12,6 +12,15 @@ class PostRequest extends FormRequest
         return true;
     }
 
+    /**
+     * @return array{
+     *   title: array<int, string>,
+     *   slug: array<int, string>,
+     *   description: array<int, string>,
+     *   content: array<int, string>,
+     *   active: array<int, string>
+     * }
+     */
     public function rules(): array
     {
         return [
