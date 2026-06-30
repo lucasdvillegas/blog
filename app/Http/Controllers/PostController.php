@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class PostController extends Controller
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
         return Inertia::render('Post/Index', [
-            'posts' => Post::latest()->paginate(10),
+            'posts' => Post::latest()
+                ->paginate(
+                    $request->integer('per_page', 10)
+                )
+                ->withQueryString(),
         ]);
     }
 
