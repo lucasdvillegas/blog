@@ -90,16 +90,22 @@ const pages = () => {
         :model-value="String(pagination.per_page)"
         @update:model-value="changePerPage"
       >
-        <SelectTrigger class="w-[90px]">
+        <SelectTrigger class="w-[90px] cursor-pointer">
           <SelectValue />
         </SelectTrigger>
 
         <SelectContent>
-          <SelectItem value="10"> 10 </SelectItem>
+          <SelectItem value="10" class="cursor-pointer">
+            10
+          </SelectItem>
 
-          <SelectItem value="15"> 15 </SelectItem>
+          <SelectItem value="15" class="cursor-pointer">
+            15
+          </SelectItem>
 
-          <SelectItem value="20"> 20 </SelectItem>
+          <SelectItem value="20" class="cursor-pointer">
+            20
+          </SelectItem>
         </SelectContent>
       </Select>
     </div>
@@ -110,6 +116,7 @@ const pages = () => {
         size="sm"
         :disabled="pagination.current_page === 1"
         @click="goToPage(pagination.current_page - 1)"
+        class="cursor-pointer"
       >
         <ChevronLeft class="h-4 w-4" />
       </Button>
@@ -124,6 +131,7 @@ const pages = () => {
             : 'outline'
         "
         @click="goToPage(page)"
+        class="cursor-pointer"
       >
         {{ page }}
       </Button>
@@ -135,6 +143,7 @@ const pages = () => {
           pagination.current_page === pagination.last_page
         "
         @click="goToPage(pagination.current_page + 1)"
+        class="cursor-pointer"
       >
         <ChevronRight class="h-4 w-4" />
       </Button>
