@@ -23,40 +23,34 @@ interface Pagination {
 const props = defineProps<{
   pagination: Pagination;
   route: string;
+  filters: {
+    search?: string;
+    status?: string;
+  };
 }>();
 
 const goToPage = (page: number) => {
-  router.get(
-    props.route,
-    {
-      page,
-      per_page: props.pagination.per_page,
-    },
-    {
-      preserveScroll: true,
-    },
-  );
+  router.get(props.route, {
+    page,
+    per_page: props.pagination.per_page,
+    search: props.filters.search,
+    status: props.filters.status,
+  });
 };
 
 const changePerPage = (value: any) => {
-  if (!value) {
-    return;
-  }
-
-  // Convierte cualquier valor a número
   const numericValue = Number(value);
-
-  if (isNaN(numericValue)) {
-    return;
-  }
 
   router.get(
     props.route,
     {
       page: 1,
       per_page: numericValue,
+      search: props.filters.search,
+      status: props.filters.status,
     },
     {
+      preserveState: true,
       preserveScroll: true,
     },
   );

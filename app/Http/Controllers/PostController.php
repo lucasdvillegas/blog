@@ -14,11 +14,33 @@ class PostController extends Controller
     public function index(Request $request): Response
     {
         return Inertia::render('Post/Index', [
-            'posts' => Post::latest()
-                ->paginate(
-                    $request->integer('per_page', 10)
-                )
+            'posts' => Post::query()
+                ->when($request->filled('search'), function ($query) use ($request) {
+                    $search = $request->input('search');
+
+                    $query->where(function ($q) use ($search) {
+                        $q->where('title', 'like', "%{$search}%")
+                        ->orWhereDate('created_at', $search);
+                    });
+                })
+                ->when($request->filled('status'), function ($query) use ($request) {
+                    $status = $request->input('status');
+
+                    if ($status === '1') {
+                        $query->where('active', 1);
+                    }
+
+                    if ($status === '0') {
+                        $query->where('active', 0);
+                    }
+                })
+                ->latest()
+                ->paginate($request->integer('per_page', 10))
                 ->withQueryString(),
+            'filters' => [
+                'search' => $request->input('search'),
+                'status' => $request->input('status', 'all'),
+            ],
         ]);
     }
 
